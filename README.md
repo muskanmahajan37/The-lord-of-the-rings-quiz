@@ -1,4 +1,4 @@
-# The Lord of The rings Rings
+# The Lord of The Rings
 <h1 align="center" >
     <img src="https://ik.imagekit.io/mcvhbcq4zu/desktopversion_hF_irfuTd.gif">
 </h1>
