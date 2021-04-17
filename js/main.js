@@ -1,87 +1,81 @@
-const startButton = document.getElementById('start-btn')
-const nextButton = document.getElementById('next-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const iniciar = document.querySelector('.iniciar');
+const next = document.querySelector('.next');
+const respostas = document.querySelector('.respostas');
+const overlay = document.querySelector('.overlay');
+let options = document.querySelectorAll('.btn');
+let pergunta = respostas.querySelector('h1');
+let random = 0;
 
-let shuffledQuestions, currentQuestionIndex
+iniciar.addEventListener('click', () => {
+    startGame();
+});
 
-startButton.addEventListener('click', startGame)
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++
-    setNextquestion()
+function randomNumber() {
+    random = Math.floor(Math.random() * 4 )
+}
+
+function startGame() {
+    randomNumber()
+    iniciar.classList.add('hide');
+    respostas.classList.remove('hide');
+
+    /*pergunta */
+    pergunta.innerHTML = quiz[random].question
+
+    /*opções*/
+    options.forEach((item, index) => {
+        item.innerHTML = quiz[random].answer[index].text
+    })
+}
+
+/*check answer */
+options.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        next.classList.remove('hide')
+        overlay.classList.remove('hide')
+        setColor()
+
+        //set background-color
+        let background = quiz[random].answer[index].correct;
+        if (background) {
+            overlay.style.backgroundColor = 'rgba(60, 250, 43, 0.3)';
+        } else {
+            overlay.style.backgroundColor = 'rgba(248, 0, 0, 0.2)';
+        }
+    })
+});
+
+function setColor() {
+    quiz[random].answer.forEach((button, position) => {
+        if (button.correct) {
+            options[position].style.backgroundColor = 'green'
+        } else {
+            options[position].style.backgroundColor = 'red'
+        }
+    })
+}
+
+/*next question */
+next.addEventListener('click', () => {
+    randomNumber()
+    next.classList.add('hide');
+    overlay.classList.add('hide');
+    options.forEach((item) => {
+        item.style.backgroundColor = 'rgb(60, 145, 243)'
+    })
+    pergunta.innerHTML = quiz[random].question
+    /*options*/
+    options.forEach((item, index) => {
+        item.innerHTML = quiz[random].answer[index].text
+    })
+    
 })
 
-function startGame(){
-    startButton.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    questionContainerElement.classList.remove('hide')
-    setNextquestion()
-}
 
-function setNextquestion() {
-    resetState()
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-}
-
-function showQuestion(question){
-    questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct){
-            button.dataset.correct = answer.correct 
-        }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
-}
-
-function resetState(){
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild){
-        answerButtonsElement.removeChild
-        (answerButtonsElement.firstChild)
-    }
-}
-
-function selectAnswer(e){
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body,correct)
-    Array.from(answerButtonsElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (shuffledQuestions.length > currentQuestionIndex + 1) {
-        nextButton.classList.remove('hide')
-    }else {
-        startButton.innerText = 'Restart'
-        startButton.classList.remove('hide')
-    }
-}
-
-function setStatusClass(element, correct){
-    clearStatusClass(element)
-    if(correct) {
-        element.classList.add('correct')
-    } else{
-        element.classList.add('wrong')
-    }
-}
-
-function clearStatusClass(element){
-    element.classList.remove('correct')
-    element.classList.remove('wrong')
-}
-
-
-const questions = [
+var quiz = [
     {
         question: "what is the director's name",
-        answers: [
+        answer: [
             {text: 'Peter Jackson', correct: true},
             {text: 'Steven Spielberg', correct: false},
             {text: 'Alfred Hitchcock', correct: false},
@@ -90,7 +84,7 @@ const questions = [
     },
     {
         question: "Who is Elrond's daughter ?",
-        answers: [
+        answer: [
             {text: 'Éowyn', correct: false},
             {text: 'Arwen', correct: true},
             {text: 'Galadriel', correct: false},
@@ -98,8 +92,8 @@ const questions = [
         ]
     },
     {
-        question: "in 'The Fellowship of the Ring', Boromir, dies saving which  characters??",
-        answers: [
+        question:  "in 'The Fellowship of the Ring', Boromir, dies saving which  characters??",
+        answer: [
             {text: 'Frodo and Sam', correct: false},
             {text: 'Merry and Pippin ', correct: true},
             {text: 'Legolas and Giml', correct: false},
@@ -108,7 +102,7 @@ const questions = [
     },
     {
         question: "where the Shire is located in regular earth",
-        answers: [
+        answer: [
             {text: 'Brazil', correct: false},
             {text: 'Holland', correct: false},
             {text: 'new Zealand', correct: true},
@@ -116,8 +110,8 @@ const questions = [
         ]
     },
     {
-        question: "What is the Bilbo's sword called",
-        answers: [
+        question: "question: What is the Bilbo's sword called",
+        answer: [
             {text: 'Sting', correct: true},
             {text: 'old blade', correct: false},
             {text: 'Sharp', correct: false},
@@ -126,11 +120,12 @@ const questions = [
     },
     {
         question: "what the 9 Nazguls used to be",
-        answers: [
+        answer: [
             {text: 'elves', correct: false},
             {text: 'men', correct: true},
             {text: 'Uruk-hai', correct: false},
             {text: "orcs", correct: false}
         ]
-    },
+    }
+
 ]
