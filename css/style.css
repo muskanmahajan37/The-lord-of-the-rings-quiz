@@ -3,107 +3,139 @@
     font-family:'lord';
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-:root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
-}
-
-body{
-    --hue: var(--hue-neutral);
-    font-family: 'lord';
-    font-size: 40px; 
+*{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    font-family:'lord';
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.container{
+    display: flex;
     width: 100vw;
     height: 100vh;
+    background-image: url('../images/lord.jpg');
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     flex-direction: column;
-    background-color: hsl(var(--hue), 100%, 20%);
 }
 
-body.correct {
-    --hue: var(--hue-correct)
+.overlay.wrong{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: red;
+    opacity: .3;
+    z-index: 1;
 }
 
-body.wrog {
-    --hue: var(--hue-wrong)
+.logo{
+    text-align: center;
+    margin-bottom: 10px;
+    width: 50%;
 }
 
-.container {
-    width: 800px;
-    max-width: 80%;
+.logo img{
+    width: 70%;
+}
+
+.overlay.correct{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(7, 212, 17);
+    opacity: .3;
+    z-index: 1;
+}
+
+main{
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
     background-color: aliceblue;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 11px 2px;
 }
 
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.btn{
-    --hue: var(--hue-neutral);
-    border: 3px solid hsl(var(--hue), 100%, 30%);
-    background-color: rgb(60, 145, 243);
-    border-radius: 5px;
+main .iniciar button{
     padding: 5px 10px;
-    color: white;
-    outline: none;
-    font-family: lord;
-    font-size: 21px;
-}
-
-.btn:hover{
-    border-color: black;
-}
-
-.correct{   
-    background-color: rgb(12, 182, 12);
-}
-
-.wrong{
-    background: rgb(238, 32, 32);
-}
-
-.start-btn, .next-btn {
     font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(143, 77, 143);
+    color: white;
+    transition: .5s;
 }
 
-.controls{
+main .iniciar button:hover{
+    background-color: rgb(124, 70, 124);
+}
+
+main .respostas{
+    width: 100%;
+}
+
+main .respostas h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+main .respostas button{
+    background-color: rgb(60, 145, 243);
+    border: 3px solid rgb(47, 125, 214);
+    color: aliceblue;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+main .respostas > div{
+    width: 99%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
+
+main .respostas div:first-child{
+    margin-bottom: 10px;
+}
+
+main .respostas div button:first-child{
+    margin-right: 10px;
+}
+
 
 .hide{
     display: none;
 }
 
-@media screen and (max-width: 506px){
-    .logo img{
-        width: 90%;
-    }
-    .logo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
+main div:nth-child(2){
+    margin-bottom: 10px;
+}
 
-    .body{
-        font-family: 15px;
-    }
+.next button{
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(143, 77, 143);
+    color: white;
+    transition: .5s;
 }
