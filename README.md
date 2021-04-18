@@ -20,7 +20,7 @@ All the services were TDD planed, so please make sure to update tests as appropr
 
 ---
  
- ## technologies
+## 🛠 💼 technologies
 the project was developed using the following technologies
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
