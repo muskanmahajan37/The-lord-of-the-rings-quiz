@@ -8,7 +8,7 @@
 - [technologies](#-technologies)
 - [Contributing](#-Contributing)
 
-## About
+## :mag: About
 in this quiz you can prove if you really know The lord of the rings! I'm a big fã of this trilogy, so  i've created this quiz  just using **CSS**, **HTML** e **Javascript** in order to test my frieds! in this Project I've learned how to use variable in css, I also learned how to manipulate classlist in Javascript, addind classes and removing classes
 
 ---
