@@ -30,7 +30,7 @@ the project was developed using the following technologies
 ## Mobile Version
 
 <h1 align="center" >
-    <img src="https://ik.imagekit.io/mcvhbcq4zu/mobileversion_MpFIsGHAL.gif">
+    <img src="https://ik.imagekit.io/mcvhbcq4zu/quiizMobile_cZCgzIYqo.gif">
 </h1>
 
 Created by **Victor lira dev**
