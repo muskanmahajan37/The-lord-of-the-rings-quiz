@@ -8,6 +8,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "lord";
+  font-size: 16px;
 }
 
 .overlay {
@@ -59,12 +60,13 @@
 }
 
 main {
-  min-width: 500px;
   display: flex;
+  min-width: 250px;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+  margin: 0 10px;
   background-color: aliceblue;
   border-radius: 5px;
   padding: 10px;
@@ -73,7 +75,7 @@ main {
 
 main .iniciar button {
   padding: 5px 10px;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   background-color: rgb(143, 77, 143);
@@ -91,6 +93,7 @@ main .respostas {
 
 main .respostas h1 {
   text-align: center;
+  font-size: 1.7rem;
   margin-bottom: 10px;
 }
 
@@ -101,7 +104,7 @@ main .respostas button {
   border-radius: 5px;
   width: 100%;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 200;
   cursor: pointer;
 }
@@ -131,10 +134,22 @@ main div:nth-child(2) {
 
 .next button {
   padding: 5px 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: none;
   cursor: pointer;
   background-color: rgb(143, 77, 143);
   color: white;
   transition: 0.5s;
+}
+
+@media screen and (max-width: 833px){
+  .logo{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 631px){
+  .logo{
+    width: 100%;
+  }
 }
