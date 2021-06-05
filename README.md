@@ -1,6 +1,6 @@
 # The Lord of The Rings
 <h1 align="center" >
-    <img src="https://ik.imagekit.io/mcvhbcq4zu/quiz_0i-PxSRn8.gif">
+    <img src="https://ik.imagekit.io/mcvhbcq4zu/quiz_5uEGaM0dqX.gif">
 </h1>
 
 # Sections
