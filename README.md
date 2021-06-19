@@ -3,6 +3,10 @@
     <img src="https://ik.imagekit.io/mcvhbcq4zu/quiz_5uEGaM0dqX.gif">
 </h1>
 
+# Important
+
+:key: Take a look --> https://victorlira-dev.github.io/The-Lord-Of-The-Rings-QUIZ/
+
 # Sections
 - [about](#-About)
 - [technologies](#-technologies)
