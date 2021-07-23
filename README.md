@@ -5,7 +5,7 @@
 
 # Important
 
-:key: Take a look --> https://victorlira-dev.github.io/The-Lord-Of-The-Rings-QUIZ/
+:key: Take a look --> https://victorlira-dev.github.io/The-lord-of-the-rings-quiz/
 
 # Sections
 - [about](#-About)
