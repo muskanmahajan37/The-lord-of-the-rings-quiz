@@ -1,0 +1,184 @@
+@font-face {
+  src: url("../font/RINGM___.TTF");
+  font-family: "lord";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "lord";
+  font-size: 16px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/lord.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.overlay.wrong {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.overlay.correct {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #07d411;
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+  width: 50%;
+}
+
+.logo img {
+  width: 70%;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 250px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  margin: 0 10px;
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  -webkit-box-shadow: 0 0 11px 2px;
+          box-shadow: 0 0 11px 2px;
+}
+
+main div:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+main .iniciar button {
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  background-color: #8f4d8f;
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+main .iniciar button:hover {
+  background-color: #7c467c;
+}
+
+main .respostas {
+  width: 100%;
+}
+
+main .respostas h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+main .respostas > div {
+  width: 99%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .respostas div:first-child {
+  margin-bottom: 10px;
+}
+
+main .respostas div button:first-child {
+  margin-right: 10px;
+}
+
+main .respostas button {
+  background-color: #3c91f3;
+  border: 3px solid #2f7dd6;
+  color: aliceblue;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+main .next button {
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  background-color: #8f4d8f;
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 833px) {
+  .logo {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 631px) {
+  .logo {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
